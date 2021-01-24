@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "quando"
+version = "0.1.0"
+description = ""
+authors = ["Tage Johansson <tajo9185@uu.student.se>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+ics = "^0.7"
+arrow = "^0.14"
+requests = "^2.25.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[tool.poetry.scripts]
+quando = "quando.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
