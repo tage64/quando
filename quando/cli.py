@@ -17,9 +17,8 @@ def main() -> None:
     parser.add_argument("-s", "--start", type=arrow.get)
     parser.add_argument("-e", "--end", type=arrow.get)
     args = parser.parse_args()
-    url = args.url.strip()
-    if url:
-        text = requests.get(url).text
+    if args.url:
+        text = requests.get(args.url.strip()).text
         calendar = ics.Calendar(text)
     else:
         calendar = ics.Calendar(sys.stdin.read())
