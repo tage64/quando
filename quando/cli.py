@@ -20,9 +20,9 @@ def main() -> None:
     url = args.url.strip()
     if url:
         text = requests.get(url).text
+        calendar = ics.Calendar(text)
     else:
         calendar = ics.Calendar(sys.stdin.read())
-    calendar = ics.Calendar(text)
     events: Iterator[ics.Event] = iter(calendar.timeline)
     if args.start:
         events = itertools.dropwhile(lambda x: x.begin < args.start, events)
