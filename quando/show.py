@@ -22,6 +22,8 @@ def event_str(event: ics.Event) -> str:
     if event.name:
         event_str += ": "
         event_str += event.name
+    if event.location:
+        event_str += f", {event.location}"
     return event_str
 
 
