@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "quando"
-version = "0.1.0"
-description = ""
+version = "0.1.1"
+description = "A very small program to show ICS calenders from the command line."
 authors = ["Tage Johansson <tajo9185@uu.student.se>"]
 
 [tool.poetry.dependencies]
