@@ -13,6 +13,7 @@ requests = "^2.25.1"
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 types-requests = "^2.25.6"
+mypy = "^0.931"
 
 [tool.poetry.scripts]
 quando = "quando.cli:main"
