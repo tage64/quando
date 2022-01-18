@@ -13,12 +13,12 @@ def event_str(event: ics.Event) -> str:
         if begin != end:
             if begin.date() == end.date():
                 event_str += begin.format(
-                    "YY-MM-DD HH:MM") + " - " + end.format("HH:MM")
+                    "YY-MM-DD HH:mm") + " - " + end.format("HH:mm")
             else:
                 event_str += begin.format(
-                    "YY-MM-DD HH:MM") + " - " + end.format("YY-MM-DD HH:MM")
+                    "YY-MM-DD HH:mm") + " - " + end.format("YY-MM-DD HH:mm")
         else:
-            event_str += begin.format("YY-MM-DD HH:MM")
+            event_str += begin.format("YY-MM-DD HH:mm")
     if event.name:
         event_str += ": "
         event_str += event.name
