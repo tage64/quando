@@ -16,6 +16,7 @@ def main() -> None:
     parser.add_argument("-u", "--url")
     parser.add_argument("-s", "--start", type=arrow.get)
     parser.add_argument("-e", "--end", type=arrow.get)
+    parser.add_argument("-v", "--verbose", action="store_true")
     args = parser.parse_args()
     if args.url:
         text = requests.get(args.url.strip()).text
@@ -27,4 +28,4 @@ def main() -> None:
         events = itertools.dropwhile(lambda x: x.begin < args.start, events)
     if args.end:
         events = itertools.takewhile(lambda x: x.begin <= args.end, events)
-    show.show_events(events)
+    show.show_events(events, args.verbose)

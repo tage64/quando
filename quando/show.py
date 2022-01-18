@@ -3,7 +3,7 @@ from typing import Iterator
 import ics  # type: ignore
 
 
-def event_str(event: ics.Event) -> str:
+def event_str(event: ics.Event, verbose: bool) -> str:
     event_str: str = ""
     begin = event.begin.to("local")  # Convert to local timezone.
     if event.all_day:
@@ -24,9 +24,12 @@ def event_str(event: ics.Event) -> str:
         event_str += event.name
     if event.location:
         event_str += f", {event.location}"
+    if verbose:
+        if descr := event.description:
+            event_str += f"\n  Description: {descr}"
     return event_str
 
 
-def show_events(events: Iterator[ics.Event]) -> None:
+def show_events(events: Iterator[ics.Event], verbose: bool) -> None:
     for event in events:
-        print(event_str(event))
+        print(event_str(event, verbose))
