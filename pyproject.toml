@@ -9,6 +9,7 @@ python = "^3.9"
 ics = "^0.7"
 arrow = "^0.14"
 requests = "^2.25.1"
+appdirs = "^1.4.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
