@@ -12,11 +12,15 @@ def event_str(event: ics.Event, verbose: bool) -> str:
         end = event.end.to("local")
         if begin != end:
             if begin.date() == end.date():
-                event_str += begin.format(
-                    "YY-MM-DD HH:mm") + " - " + end.format("HH:mm")
+                event_str += (
+                    begin.format("YY-MM-DD HH:mm") + " - " + end.format("HH:mm")
+                )
             else:
-                event_str += begin.format(
-                    "YY-MM-DD HH:mm") + " - " + end.format("YY-MM-DD HH:mm")
+                event_str += (
+                    begin.format("YY-MM-DD HH:mm")
+                    + " - "
+                    + end.format("YY-MM-DD HH:mm")
+                )
         else:
             event_str += begin.format("YY-MM-DD HH:mm")
     if event.name:
