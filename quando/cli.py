@@ -30,6 +30,7 @@ def main() -> None:
         default=os.path.join(appdirs.user_cache_dir(), "quando.json"),
         help="Path to the cache file.",
     )
+    parser.add_argument("-p", "--past", action="store_true", help="Include past events.")
     args = parser.parse_args()
     if args.url:
         text: str | None = None
@@ -85,4 +86,7 @@ def main() -> None:
         events = itertools.dropwhile(lambda x: x.begin < args.start, events)
     if args.end:
         events = itertools.takewhile(lambda x: x.begin <= args.end, events)
+    if not args.past:
+        now = arrow.now()
+        events = itertools.dropwhile(lambda x: x.begin < now, events)
     show.show_events(events, args.verbose)
