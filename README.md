@@ -2,13 +2,13 @@
 
 A very small program to show ICS calenders in the terminal.
 
-## Building
+## Installation
 
-* Make sure you've installed [Poetry][1] and a recent version of Python (and Pip).
+* Install [pipx][3]
 * Run:
     ```
-    poetry build
-    pip install dist/quando-x.y.z.tar.gz
+    pipx install .
     ```
 
-1: https://github.com/python-poetry/poetry
+[1]: https://github.com/python-poetry/poetry
+[2]: https://github.com/pypa/pipx
