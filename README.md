@@ -7,6 +7,8 @@ A very small program to show ICS calenders in the terminal.
 * Install [pipx][2]
 * Run:
     ```
+    pipx install git+https://github.com/tage64/quando
+    # Or from within this directory:
     pipx install .
     ```
 
