@@ -4,7 +4,7 @@ A very small program to show ICS calenders in the terminal.
 
 ## Installation
 
-* Install [pipx][3]
+* Install [pipx][2]
 * Run:
     ```
     pipx install .
